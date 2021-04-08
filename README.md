@@ -43,13 +43,17 @@ Find the file `index.js` and complete the tasks.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+
+  -Closure is a group of code that has all references included in that code. If you are trying to reference something in the function that js doesn't understand, it doesn't have closure. 
+
+
 2. Study the following code, then answer the questions below.
 
 ```js
 function personalDice(name){
   return function(){
       // generate random number between 1 and 6
-    const newRoll = Math.floor(Math.random() * 6);
+    const newRoll = Math.ceil(Math.random() * 6);
     console.log(`${name} rolled a ${newRoll}`)
   }
 }
@@ -64,8 +68,11 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+  -Closure is used in this code and we can tell because personalDice() returns a function and requires a variable (name) that is referenced outside of that inner function
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+  -The name will be the same because dansRoll passes in Dan's name, but the randomly generated number will change.
 c. What is the lexical scope of `newRoll`? 
+  -`newRoll` is only available within the personalDice() function. It is not a global variable
 
 
 ### Task 3 - Stretch Goals
